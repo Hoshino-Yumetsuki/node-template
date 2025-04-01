@@ -1,0 +1,59 @@
+{
+  "name": "node-template-yakumo",
+  "description": "A node repository template with yakumo",
+  "version": "1.0.0",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "yakumo build --minify",
+    "publish": "yakumo publish",
+    "lint": "eslint src",
+    "lint-fix": "eslint src --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hoshino-Yumetsuki/node-template-yakumo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Hoshino-Yumetsuki/node-template-yakumo/issues"
+  },
+  "homepage": "https://github.com/Hoshino-Yumetsuki/node-template-yakumo",
+  "keywords": [
+    "template",
+    "yakumo"
+  ],
+  "devDependencies": {
+    "@types/node": "^22.13.14",
+    "@typescript-eslint/eslint-plugin": "^8.29.0",
+    "@typescript-eslint/parser": "^8.29.0",
+    "cordis": "^4.0.0-beta.0",
+    "eslint": "^9.23.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-n": "^17.17.0",
+    "eslint-plugin-prettier": "^5.2.5",
+    "eslint-plugin-promise": "^7.2.1",
+    "prettier": "^3.5.3",
+    "rolldown": "1.0.0-beta.7",
+    "typescript": "^5.8.2",
+    "yakumo": "^2.0.0-alpha.4",
+    "yakumo-rolldown": "1.1.0-beta.5",
+    "yakumo-tsc": "^2.0.0-alpha.3"
+  },
+  "packageManager": "yarn@4.7.0+sha512.5a0afa1d4c1d844b3447ee3319633797bcd6385d9a44be07993ae52ff4facabccafb4af5dcd1c2f9a94ac113e5e9ff56f6130431905884414229e284e37bb7c9"
+}
