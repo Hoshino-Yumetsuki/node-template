@@ -22,7 +22,7 @@
     "build": "yakumo build --minify",
     "publish": "yakumo publish",
     "lint": "biome check",
-    "lint-fix": "biome format --write"
+    "format": "biome format --write"
   },
   "repository": {
     "type": "git",
