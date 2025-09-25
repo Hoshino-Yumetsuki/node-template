@@ -1,9 +1,9 @@
 import { defineConfig } from 'rolldown'
-import dependencies from './package.json' with { type: 'json' }
+import pkg from './package.json' with { type: 'json' }
 import { dts } from 'rolldown-plugin-dts'
 
 const external = new RegExp(
-  `^(node:|${[...Object.getOwnPropertyNames(dependencies.devDependencies ? dependencies.devDependencies : []), ...Object.getOwnPropertyNames(dependencies.dependencies ? dependencies.dependencies : [])].join('|')})`
+  `^(node:|${[...Object.getOwnPropertyNames(pkg.devDependencies ? pkg.devDependencies : []), ...Object.getOwnPropertyNames(pkg.dependencies ? pkg.dependencies : [])].join('|')})`
 )
 
 const config = {
@@ -13,17 +13,17 @@ const config = {
 export default defineConfig([
   {
     ...config,
-    output: [{ file: 'dist/index.mjs', format: 'es', minify: true }],
+    output: [{ file: 'lib/index.mjs', format: 'es', minify: true }],
     external: external
   },
   {
     ...config,
-    output: [{ file: 'dist/index.cjs', format: 'cjs', minify: true }],
+    output: [{ file: 'lib/index.cjs', format: 'cjs', minify: true }],
     external: external
   },
   {
     ...config,
-    output: [{ dir: 'dist', format: 'es' }],
+    output: [{ dir: 'lib', format: 'es' }],
     plugins: [dts({ emitDtsOnly: true })],
     external: external
   }
