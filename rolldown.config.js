@@ -13,17 +13,17 @@ const config = {
 export default defineConfig([
   {
     ...config,
-    output: [{ file: 'lib/index.mjs', format: 'es', minify: true }],
+    output: [{ file: 'dist/index.mjs', format: 'es', minify: true }],
     external: external
   },
   {
     ...config,
-    output: [{ file: 'lib/index.cjs', format: 'cjs', minify: true }],
+    output: [{ file: 'dist/index.cjs', format: 'cjs', minify: true }],
     external: external
   },
   {
     ...config,
-    output: [{ dir: 'lib', format: 'es' }],
+    output: [{ dir: 'dist', format: 'es' }],
     plugins: [dts({ emitDtsOnly: true })],
     external: external
   }
